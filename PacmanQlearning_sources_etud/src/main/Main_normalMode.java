@@ -11,7 +11,7 @@ public class Main_normalMode {
 	public static void main(String[] args) {
 		
 		double gamma = 0.95;
-		double epsilon = 0.1;
+		double epsilon = 0.3;
 		double alpha = 0.1;
 		boolean nightmareMode = true;
 		
