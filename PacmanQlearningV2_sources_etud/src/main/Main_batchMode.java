@@ -35,11 +35,10 @@ public class Main_batchMode {
 		int maxTurnPacmanGame = 300;
 		
 		
-		
-		while(true) {
+		for(int nb_iter=3;nb_iter>0;nb_iter--) {
+	//	while(true) {
 			
 			//Joue N simulation du jeu et collecte les exemples d'entrainement
-			
 			strat.modeTrain();
 			System.out.println("Play and collect examples - train mode");
 			ArrayList<TrainExample> trainExamples = play(N, maxTurnPacmanGame, chemin_maze, strat, nightmareMode);
@@ -48,7 +47,6 @@ public class Main_batchMode {
 			System.out.println("Learn model");
 			strat.learn(trainExamples);
 			strat.trainExamples.clear();
-			
 			
 			//Evaluation du score moyen de la strategie
 			strat.modeTest();
@@ -59,6 +57,7 @@ public class Main_batchMode {
 			vizualize(maxTurnPacmanGame, chemin_maze, strat, nightmareMode);
 			
 		}
+		System.out.println(" ================ FINISHED ================");
 		
 	}
 	
