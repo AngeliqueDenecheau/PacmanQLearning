@@ -108,10 +108,10 @@ public class ApproximateQLearningStrategy_withNN extends QLearningStrategy {
 					
 					trouve += 1;
 					
-				//	if(Math.floor(trouve*Math.random())== 0) {
-				//		maxQvalue = qValue;
-				//		actionChoosen = action;
-				//	}
+					if(Math.floor(trouve*Math.random())== 0) {
+						maxQvalue = qValue;
+						actionChoosen = action;
+					}
 					
 				}
 				

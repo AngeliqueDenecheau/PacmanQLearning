@@ -19,12 +19,13 @@ public class Main_batchMode {
 
 		boolean nightmareMode = true;
 		
-		double gamma = 0.95;
-		double epsilon = 0.1;
-		double alpha = 0.001;
+		double gamma = 0.98;
+		double epsilon = 0.2;
+		double alpha = 0.015;
+		int range=3;
 		
-		ApproximateQLearningStrategy_withNN strat  = new ApproximateQLearningStrategy_withNN(epsilon, gamma, alpha,  10, 100);
-
+		//ApproximateQLearningStrategy_withNN strat  = new ApproximateQLearningStrategy_withNN(epsilon, gamma, alpha,  10, 100);
+		DeepQLearningStrategy strat = new DeepQLearningStrategy(epsilon,gamma,alpha,range,10,100);
 				
 		String chemin_maze = "src/layout/originalClassic.lay";
 		
@@ -35,9 +36,10 @@ public class Main_batchMode {
 		int maxTurnPacmanGame = 300;
 		
 		
-		for(int nb_iter=3;nb_iter>0;nb_iter--) {
-	//	while(true) {
-			
+	//	for(int nb_iter=3;nb_iter>0;nb_iter--) { // pour le approximateQLearningWithNN
+		//for(int nb_iter=12;nb_iter>0;nb_iter--) { // pour le DeepLearning
+		while(true) { // version de base
+			//if(nb_iter==10)nightmareMode=true;
 			//Joue N simulation du jeu et collecte les exemples d'entrainement
 			strat.modeTrain();
 			System.out.println("Play and collect examples - train mode");
@@ -57,7 +59,7 @@ public class Main_batchMode {
 			vizualize(maxTurnPacmanGame, chemin_maze, strat, nightmareMode);
 			
 		}
-		System.out.println(" ================ FINISHED ================");
+		//System.out.println(" ================ FINISHED ================");
 		
 	}
 	

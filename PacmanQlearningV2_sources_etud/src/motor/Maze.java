@@ -173,9 +173,11 @@ public class Maze implements Serializable, Cloneable {
 	 * Permet de savoir si il y a une capsule
 	 */
 	public boolean isCapsule(int x, int y) {
-		assert ((x >= 0) && (x < size_x));
-		assert ((y >= 0) && (y < size_y));
-		return (capsules[x][y]);
+		//assert ((x >= 0) && (x < size_x));
+		//assert ((y >= 0) && (y < size_y));
+		//return (capsules[x][y]);
+		if(((x >= 0) && (x < size_x)) && ((y >= 0) && (y < size_y))) return (capsules[x][y]);
+		else return false;
 	}
 
 	public void setCapsule(int x, int y, boolean b) {
